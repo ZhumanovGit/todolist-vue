@@ -11,7 +11,7 @@ const routes = [
     component: HomePage  // Добавленная строка
   },
   {
-    path: '/',
+    path: '/tasks',
     name: 'tasks',
     component: TaskList
   },

@@ -20,12 +20,13 @@
   </div>
 </template>
 
+
 <script>
 export default {
   data() {
     return {
-      tasks: [],
-      tags: []
+      tasks: Array,
+      tags: Array
     };
   },
   mounted() {
@@ -40,6 +41,7 @@ export default {
         ]);
 
         this.tasks = tasksResponse.data;
+        console.log(this.tasks)
         this.tags = tagsResponse.data;
       } catch (error) {
         console.error('Error fetching tasks and tags:', error);
@@ -56,7 +58,7 @@ export default {
     getTagName(tagId) {
       // Метод для получения названия тега по его ID
       const tag = this.tags.find(tag => tag.id === tagId);
-      return tag ? tag.name : 'N/A';
+      return tag ? tag.title : 'N/A';
     }
   }
 };
